@@ -1,0 +1,9 @@
+## Interface: 30300
+## Title: _TelephoneADV
+## Notes: Stop callin', stop callin'; I don't wanna think anymore!; I left my head and my heart on the dance-floor
+## Author: Infected Mushroom
+## Version: 0.1 BETA
+## X-Date: 16/05/10
+Lyrics.lua
+Telephone.lua
+GUI.lua
