@@ -6,22 +6,22 @@
 -- vv Don't mess with any of this you cretin vv --
  ------------------------------------------------
 
-local delay = 2							-- This thing always makes us late. What a cunt.
-local playerName = UnitName("player");  -- This lets us call the player a whore by name. Yay.
+local delay = 2
+local playerName = UnitName("player")
 local starttimer = 0					-- This is the thing that does the thing that does the thing
 local timer = 0							-- This is the other thing that tracks the time so we can do stuff
 local numItems = 0						-- This thing that stores how many things we have in the thing
 local curLine = 1						-- This thing counts how many things we've sung
 local temptable = {} 					-- This thing is a table and enjoys long walks on the beach
 local tempinfotable = {} 				-- This thing is another table and enjoys short walks by the pond
-local Telephone = CreateFrame("FRAME");	-- This thing is a frame and shit
+local Telephone = CreateFrame("FRAME")	-- This thing is a frame and shit
 local currentsong = "none"				-- This thing is the current song we're listening to and things
 -- Some globals for use elsewhere...
 TelephoneVersionNumber = GetAddOnMetadata("_TelephoneADV", "Version")
 TelephoneAuthor = GetAddOnMetadata("_TelephoneADV", "Author")
 TelephoneLastUpdate = GetAddOnMetadata("_TelephoneADV", "X-Date")
 
-print("Hey, " .. playerName .. ", you whore! I told you stop stop calling me!");
+print("Hey, |cffffff77" .. playerName .. "|r, I told you stop stop calling me! (version: |cffffff77" .. TelephoneVersionNumber .. "|r (|cffffff77" .. TelephoneLastUpdate .. "|r))");
 
 -- Telephone_Categories ----------------
 function Telephone_Categories(rest)
@@ -108,7 +108,7 @@ end
 
 -- Telephone_Help ----------------------
 function Telephone_Help()
-	print("Hello there, welcome to |cffffff77Telephone!|r");
+	print("Hello there, welcome to |cffffff77Telephone v" .. TelephoneVersionNumber .. "|r!");
 	print("\"|cffffff77/te <songname>|r\" (without the '<>') to sing a song!");
 	print("\"|cffffff77/te list|r\" to see all current songs");
 	print("\"|cffffff77/te cat|r\" to see all current categories");

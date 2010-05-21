@@ -159,14 +159,6 @@ local ClearButton = CreateFrame("Button", nil, CreateSubMenu)
 	ClearButton:GetPushedTexture():SetTexCoord(0,.64,0,.64)
 	ClearButton:SetNormalFontObject("GameFontHighlight")
 	ClearButton:SetText("Clear")
-	local function ClearCreateBoxes()
-		EANameEditBox:SetText("")
-		EACategory:SetText("")
-		EADescriptionEditBox:SetText("")
-		EADelayEditBox:SetText("")
-		MainEditBox:SetText("")
-	end
-	ClearButton:SetScript("OnClick", ClearCreateBoxes)
 	
 local SaveButton = CreateFrame("Button", nil, CreateSubMenu)
 	SaveButton:SetWidth(100)
@@ -181,12 +173,50 @@ local SaveButton = CreateFrame("Button", nil, CreateSubMenu)
 	SaveButton:SetNormalFontObject("GameFontHighlight")
 	SaveButton:SetText("Save")
 	
+--------------------------------------
+---------- BUTTON FUNCTIONS ----------
+--------------------------------------
+local function ClearCreateBoxes()
+	EANameEditBox:SetText("")
+	EACategory:SetText("")
+	EADescriptionEditBox:SetText("")
+	EADelayEditBox:SetText("")
+	MainEditBox:SetText("")
+end
 
+local function SaveSong()
+	local newtable = { }
+	newtable["Name"] = EANameEditBox:GetText()
+	newtable["Description"] = EADescriptionEditBox:GetText()
+	newtable["Category"] = EACategory:GetText()
+	newtable["Delay"] = tonumber(EADelayEditBox:GetText())
+	local name = EANameEditBox:GetText()
+	name = strlower(name)
+	name = gsub(name, " ", "")
+	
+	TelephoneInfo[name] = newtable
+	
+	local song = MainEditBox:GetText()
+	song = gsub(song, "\n", "")
+	newtable = { strsplit(",", song) }
+	--tinsert(newtable, MainEditBox:GetText())
+	
+	TelephoneSongs[name] = newtable
+
+	
+	print("Successfully saved song |cffffff77" .. EANameEditBox:GetText() .. "|r!")
+	ClearCreateBoxes()
+end
+
+---------- SETSCRIPTS ----------
+
+ClearButton:SetScript("OnClick", ClearCreateBoxes)
+SaveButton:SetScript("OnClick", SaveSong)
 ---------------------------------------------------------------
 ----------------------- 'EDIT' SUB MENU -----------------------
 ---------------------------------------------------------------
 local EditSubMenu = CreateFrame("Frame")
-	EditSubMenu.name = "Edit"
+	EditSubMenu.name = "Edit <NYI>"
 	EditSubMenu.parent = "Telephone"
 	InterfaceOptions_AddCategory(EditSubMenu);
 	
