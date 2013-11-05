@@ -1,9 +1,8 @@
 -- TO DO:
--- Make code make sense (actually comment some stuff so I don't get lost every time I read through it :s)
--- EDIT THE FUCKING VERSION NUMBER WHEN YOU UPDATE STUFF YOU MORON
+-- Make code make sense (actually comment some stuff)
 
  ------------------------------------------------
--- vv Don't mess with any of this you cretin vv --
+-- vv Don't mess with any of thi	    vv --
  ------------------------------------------------
 
 local delay = 2
